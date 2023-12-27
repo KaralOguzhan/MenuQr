@@ -1,0 +1,32 @@
+﻿@model QrMenuAdonis.EntityLayer.Concrete.ProductGroup
+@{
+    ViewData["Title"] = "UpdateProductGroup";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Ürün Grubunu Güncelle</h2>
+
+
+
+<form method="post">
+    <input type="hidden" asp-for="ProductGroupID" />
+    <label>Ürün Grubunun Adı - Türkçe </label>
+    <input type="text" asp-for="ProductGroupNameTR" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Ürün Grubunun Adı - İngilizce </label>
+    <input type="text" asp-for="ProductGroupNameEN" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Kategori ID </label>
+    @Html.DropDownListFor(x=>x.CategoryID ,(List<SelectListItem>)ViewBag.ctg,new {@class= "form-control"})
+    <br />
+    <label>Ürün Grubunun Açıklaması - Türkçe </label>
+    <input type="text" asp-for="ProductGroupDescriptionTR" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Ürün Grubunun Açıklaması - İngilizce </label>
+    <input type="text" asp-for="ProductGroupDescriptionEN" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Ürün Grubunun Görsel Url </label>
+    <input type="text" asp-for="ProductGroupImgUrl" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <button class="btn btn-primary">Ürün Grubunu Güncelle</button>
+</form>

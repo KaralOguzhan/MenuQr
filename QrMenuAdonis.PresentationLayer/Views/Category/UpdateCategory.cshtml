@@ -1,0 +1,24 @@
+﻿@model QrMenuAdonis.EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Kategori Güncelleme Sayfası</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="CategoryID" />
+    <label>Türkçe Arayüz Kategori Adı</label>
+    <input type="text" asp-for="CategoryNameTR" class="form-control" style="border:1px solid #3333" />
+    <label>İngilizce Arayüz Kategori Adı</label>
+    <input type="text" asp-for="CategoryNameEN" class="form-control" style="border:1px solid #3333" />
+    <label>Türkçe Arayüz Kategori Açıklama</label>
+    <input type="text" asp-for="DescriptionTR" class="form-control" style="border:1px solid #3333" />
+    <label>İngilizce Arayüz Kategori Açıklama</label>
+    <input type="text" asp-for="DescriptionEN" class="form-control" style="border:1px solid #3333" />
+    <label>Kategori Görsel Link</label>
+    <input type="text" asp-for="CategoryImgUrl" class="form-control" style="border:1px solid #3333" />
+   
+    <br /><br />
+    <button class="btn btn-success">Kategoriyi Güncelle</button>
+</form>

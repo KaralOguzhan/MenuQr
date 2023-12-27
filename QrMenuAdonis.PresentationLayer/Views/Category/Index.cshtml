@@ -1,0 +1,44 @@
+﻿@model List<QrMenuAdonis.EntityLayer.Concrete.Category>
+
+@{
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<table class="table table-bordered">
+	<tr>
+		<th>#</th>
+		<th>Kategori Adı - Türkçe</th>
+		<th>Kategori Adı - İngilizce</th>
+		<th>Türkçe Açıklama</th>
+		<th>İngilizce Açıklama</th>
+		<th>Fotoğraf Link</th>
+		<th>Durum</th>
+		<th>Sil</th>
+		<th>Güncelle</th>
+	</tr>
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>@item.CategoryID</td>
+			<td>@item.CategoryNameTR</td>
+			<td>@item.CategoryNameEN</td>
+			<td>@item.DescriptionTR</td>
+			<td>@item.DescriptionEN</td>
+			<td>@item.CategoryImgUrl</td>
+			
+			<td><a href="/Category/ChangeStatus/@item.CategoryID" class="btn btn-info">@if (item.Status==true)
+					{
+						<p>Aktif</p>
+					}else
+					{
+						<p>Pasif</p>
+					}</a>
+			</td>
+			<td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
+
+			<td><a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-success">Güncelle</a></td>
+		</tr>
+	}
+</table>
+<a href="/Category/CreateCategory/" class="btn btn-primary">Yeni Kategori Girişi</a>

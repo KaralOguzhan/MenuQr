@@ -1,0 +1,33 @@
+﻿@model QrMenuAdonis.EntityLayer.Concrete.Product
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni  Ürün Oluştur</h2>
+
+<form method="post">
+    <label>Ürün Adı - Türkçe</label>
+    <input type="text" asp-for="ProductNameTR" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Ürün Adı - İngilizce</label>
+    <input type="text" asp-for="ProductNameEN" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Ürün Açıklama - Türkçe</label>
+    <input type="text" asp-for="ProductDescriptionTR" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Ürün Açıklama - İngilizce</label>
+    <input type="text" asp-for="ProductDescriptionEN" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Ürünün Ürün Grubu</label>
+    @Html.DropDownListFor(x=>x.ProductGroupID,(List<SelectListItem>)ViewBag.pgn,new{@class="form-control"})
+    <br />
+    <label>Ürünün Görseli</label>
+    <input type="text" asp-for="ProductImgUrl" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Ürünün Fiyatı</label>
+    <input type="text" asp-for="ProductPrice" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <br />
+    <button class="btn btn-primary">Ürün Oluştur</button>
+</form>

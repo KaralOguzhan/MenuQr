@@ -1,0 +1,29 @@
+﻿@model QrMenuAdonis.EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Kategori Oluştur</h2>
+
+<form method="post">
+    <label>Kategorinin Adı - Türkçe</label>
+    <input type="text" asp-for="CategoryNameTR" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Kategorinin Adı - İngilizce</label>
+    <input type="text" asp-for="CategoryNameEN" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Kategorinin Açıklaması - Türkçe</label>
+    <input type="text" asp-for="DescriptionTR" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Kategorinin Açıklaması - İngilizce</label>
+    <input type="text" asp-for="DescriptionEN" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Kategorinin Görseli</label>
+    <input type="text" asp-for="CategoryImgUrl" class="form-control" style="border:1px solid #2222" />
+    <br />
+    
+    <input type="hidden" asp-for="Status" class="form-control" value="1" style="border:1px solid #2222" />
+    <br />
+    <button class="btn btn-primary">Kategori Oluştur</button>
+</form>

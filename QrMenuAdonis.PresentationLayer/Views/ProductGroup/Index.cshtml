@@ -1,0 +1,50 @@
+﻿@model List<QrMenuAdonis.EntityLayer.Concrete.ProductGroup>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Ürün Grupları</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ürün Grubu Adı - Türkçe</th>
+        <th>Ürün Grubu Adı - İngilizce</th>
+        <th>Ürün Grubu Kategorisi </th>
+        <th>Ürün Grubu Açıklaması - Türkçe</th>
+        <th>Ürün Grubu Açıklaması - İngilizce</th>
+        <th>Ürün Grubu Fotoğraf Url</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductGroupID</td>
+            <td>@item.ProductGroupNameTR</td>
+            <td>@item.ProductGroupNameEN</td>
+            <td>@item.CategoryID</td>
+            <td>@item.ProductGroupDescriptionTR</td>
+            <td>@item.ProductGroupDescriptionEN</td>
+            <td>@item.ProductGroupImgUrl</td>
+            <td>
+                <a href="/ProductGroup/ChangeProductGroupStatus/@item.ProductGroupID" class="btn btn-info">
+                    @if (item.ProductGroupStatus == true)
+                    {
+                        <p>Aktif</p>
+                    }
+                    else
+                    {
+                        <p>Pasif</p>
+                    }
+                </a>
+            </td>
+            <td><a href="/ProductGroup/DeleteProductGroup/@item.ProductGroupID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/ProductGroup/UpdateProductGroup/@item.ProductGroupID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/ProductGroup/CreateProductGroup/" class="btn btn-primary">Yeni Ürün Grubu Girişi</a>
+
