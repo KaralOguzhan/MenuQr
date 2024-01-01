@@ -1,0 +1,43 @@
+﻿@model List<QrMenuAdonis.EntityLayer.Concrete.TypeOfMenu>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container">
+	<div class="row">
+		@foreach (var item in Model)
+		{
+			if (item.Status == false)
+			{
+
+
+				<div class="col-3">
+					<div class="card bg-danger" style="width: 18rem ;">
+						<img class="card-img-top" src="@item.ImgUrl" alt="Card image cap" style="height:150px; width:150px">
+						<div class="card-body">
+							<h5 class="card-title">@item.Name</h5>
+							<p class="card-text">@item.Description</p>
+							<a href="/TypeOfMenu/ChangeStatus/@item.TypeOfMenuID" class="btn btn-primary">Aktif Et</a>
+						</div>
+					</div>
+				</div>
+			}
+			if (item.Status == true)
+			{
+
+
+				<div class="col-3">
+					<div class="card bg-success" style="width: 18rem ;">
+						<img class="card-img-top" src="@item.ImgUrl" alt="Card image cap" style="height:150px; width:150px">
+						<div class="card-body">
+							<h5 class="card-title">@item.Name</h5>
+							<p class="card-text">@item.Description</p>
+							<a href="/TypeOfMenu/ChangeStatus/@item.TypeOfMenuID" class="btn btn-primary">Pasif Et</a>
+						</div>
+					</div>
+				</div>
+			}
+		}
+
+	</div>
+</div>

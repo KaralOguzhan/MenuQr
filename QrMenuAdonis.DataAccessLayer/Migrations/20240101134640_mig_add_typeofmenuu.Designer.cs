@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QrMenuAdonis.DataAccessLayer.Concrete;
 
@@ -10,9 +11,10 @@ using QrMenuAdonis.DataAccessLayer.Concrete;
 namespace QrMenuAdonis.DataAccessLayer.Migrations
 {
     [DbContext(typeof(QrMenuAdonisContext))]
-    partial class QrMenuAdonisContextModelSnapshot : ModelSnapshot
+    [Migration("20240101134640_mig_add_typeofmenuu")]
+    partial class mig_add_typeofmenuu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,13 +152,8 @@ namespace QrMenuAdonis.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TypeOfMenuID"), 1L, 1);
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ListType")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()

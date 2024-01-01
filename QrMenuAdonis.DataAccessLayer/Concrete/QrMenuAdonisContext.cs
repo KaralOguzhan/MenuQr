@@ -17,6 +17,7 @@ namespace QrMenuAdonis.DataAccessLayer.Concrete
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductGroup> ProductGroups { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<TypeOfMenu> typeOfMenus { get; set; }
         
     }
 }

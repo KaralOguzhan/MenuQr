@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QrMenuAdonis.DataAccessLayer.Concrete;
 
@@ -10,9 +11,10 @@ using QrMenuAdonis.DataAccessLayer.Concrete;
 namespace QrMenuAdonis.DataAccessLayer.Migrations
 {
     [DbContext(typeof(QrMenuAdonisContext))]
-    partial class QrMenuAdonisContextModelSnapshot : ModelSnapshot
+    [Migration("20240101142046_mig_add_typeofmenu_v2")]
+    partial class mig_add_typeofmenu_v2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

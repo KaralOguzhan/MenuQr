@@ -6,10 +6,10 @@ namespace QrMenuAdonis.PresentationLayer.Models
     {
         public List<ProductGroup> productGroups { get; set; }
         public List<Product> products { get; set; }
-        public MyModel(List<ProductGroup> productGroups, List<Product> products)
+        public MyModel()
         {
-            this.productGroups = productGroups;
-            this.products = products;
+            productGroups = new List<ProductGroup>();
+            products = new List<Product>();
         }
     }
 }

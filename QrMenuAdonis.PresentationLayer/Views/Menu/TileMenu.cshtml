@@ -1,0 +1,48 @@
+﻿@model MyModel
+@{
+	ViewData["Title"] = "TileMenu";
+	Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<section class="menu space60">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header wow fadeInDown">
+					<h1>Tile Style<small>These fine folks trusted the award winning restaurant.</small></h1>
+				</div>
+			</div>
+		</div>
+		<div class="food-menu wow fadeInUp">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="menu-tags3">
+						@foreach (var item in Model.productGroups)
+						{
+							<span data-filter="@string.Format(".{0}",@item.ProductGroupID)">@item.ProductGroupNameTR</span>
+						}
+
+					</div>
+				</div>
+			</div>
+			<div class="row menu-items3">
+				@foreach (var item in Model.products)
+				{
+					<div class="menu-item3 col-sm-6 col-xs-12 @item.ProductGroupID">
+						<img src="@item.ProductImgUrl" class="img-responsive" alt="" />
+						<div class="menu-wrapper">
+							<h4>@item.ProductNameTR</h4>
+							<span class="price">@item.ProductPrice ₺</span>
+							<div class="dotted-bg"></div>
+							<p>@item.ProductDescriptionTR</p>
+						</div>
+					</div>
+				}
+
+
+			</div>
+		</div>
+	</div>
+</section>
+
+
